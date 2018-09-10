@@ -8,6 +8,25 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {}
+// Remove 0's from end
+// move -ive to front
+// reverse
+
+function reverseInt(n) {
+  if (n === 0) return 0
+  arr = n.toString().split("").reverse()
+  while(arr[0] === '0'){
+    arr.shift()
+  }
+
+  if (n > 0) {
+    return parseInt(arr.join(""))
+  } else {
+    arr.pop()
+    arr.unshift('-')
+    return parseInt(arr.join(""))
+
+  }
+}
 
 module.exports = reverseInt;
