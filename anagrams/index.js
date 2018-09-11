@@ -10,16 +10,11 @@
 
 function anagrams(stringA, stringB) {
 
-  stringA = stringA.replace(/[^\w]/g, "").toLowerCase()
-
-  stringB = stringB.replace(/[^\w]/g, "").toLowerCase()
-
-return JSON.stringify(strMap(stringA)) === JSON.stringify(strMap(stringB))
-
 }
 
 function strMap(str){
   hsh = {}
+  str = str.replace(/[^\w]/g, "").toLowerCase()
   str.split("").forEach((el) => {
     // console.log(el)
     if (hsh[el]){
