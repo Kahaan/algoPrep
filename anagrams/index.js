@@ -8,6 +8,28 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+
+  stringA = stringA.replace(/[^\w]/g, "").toLowerCase()
+
+  stringB = stringB.replace(/[^\w]/g, "").toLowerCase()
+
+return JSON.stringify(strMap(stringA)) === JSON.stringify(strMap(stringB))
+
+}
+
+function strMap(str){
+  hsh = {}
+  str.split("").forEach((el) => {
+    // console.log(el)
+    if (hsh[el]){
+      hsh[el] += 1
+    } else {
+      hsh[el] = 1
+    }
+  })
+  return hsh
+}
+
 
 module.exports = anagrams;
