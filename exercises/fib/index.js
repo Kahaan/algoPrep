@@ -9,12 +9,11 @@
 //   fib(4) === 3
 
 function fib(n, arr) {
-  arr = [0,1]
-  if (arr.length === n) return arr[n]
-  while (arr.length <= n){
-    arr.push(arr[arr.length -1] + arr[arr.length - 2])
+  if (n < 2){
+    return n
   }
-  fib(arr[arr.length-1],arr)
+
+  return fib(n - 1) + fib(n - 2)
 }
 
 module.exports = fib;
