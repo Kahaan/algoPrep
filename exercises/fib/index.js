@@ -8,6 +8,19 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+function fib(n, arr) {
+  arr = [0,1]
+  if (arr.length === n) return arr[n]
+  while (arr.length <= n){
+    arr.push(arr[arr.length -1] + arr[arr.length - 2])
+  }
+  fib(arr[arr.length-1],arr)
+}
 
 module.exports = fib;
+//
+// arr = [0,1]
+// while (arr.length <= n){
+//   arr.push(arr[arr.length -1] + arr[arr.length - 2])
+// }
+// return arr[n]
