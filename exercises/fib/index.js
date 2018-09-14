@@ -7,14 +7,14 @@
 // forms the first ten entries of the fibonacci series.
 // Example:
 //   fib(4) === 3
-// 
-// function fib(n, arr) {
-//   if (n < 2){
-//     return n
-//   }
-//
-//   return fib(n - 1) + fib(n - 2)
-// }
+
+function fib(n, arr) {
+  if (n < 2){
+    return n
+  }
+
+  return fib(n - 1) + fib(n - 2)
+}
 
 module.exports = fib;
 //
