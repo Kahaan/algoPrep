@@ -26,23 +26,16 @@ const Queue = require('./queue');
 
 function weave(sourceOne, sourceTwo) {
   const result = new Queue()
-  let longer = ''
-  sourceOne.length > sourceTwo.length ? longer = sourceOne.length : longer = sourceTwo.length
 
-  for (let i = 0; i < longer; i++){
-    if (i % 2 === 0 && sourceOne.peek() !== undefined){
+  while (sourceOne.peek() || sourceTwo.peek()){
+    if (sourceOne.peek()){
       result.add(sourceOne.remove())
-    } else if (i % 2 !== 0 && sourceTwo.peek() !== undefined){
+    }
+    if (sourceTwo.peek()){
       result.add(sourceTwo.remove())
-    } else if (sourceOne.peek() === undefined && sourceTwo.peek() !== undefined) {
-      result.add(sourceTwo.remove())
-    } else if (sourceTwo.peek() === undefined && sourceOne.peek() !== undefined) {
-      result.add(sourceOne.remove())
-    } else if (sourceOne.peek() === undefined && sourceTwo.peek() === undefined) {
-      return result
     }
   }
-  debugger
+
   return result
 }
 
