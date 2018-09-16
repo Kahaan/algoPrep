@@ -8,13 +8,19 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n, arr) {
+function memoize(fn){
+
+}
+
+function slowfib(n, arr) {
   if (n < 2){
     return n
   }
 
   return fib(n - 1) + fib(n - 2)
 }
+
+const fib = memoize(slowfib)
 
 module.exports = fib;
 //
