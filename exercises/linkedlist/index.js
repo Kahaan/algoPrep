@@ -102,18 +102,17 @@ class LinkedList {
   }
 
   removeAt(integer){
-    if (this.head === null) return null
-    let counter = 0
-    let curNode = this.head
-    let nextNode = curNode.next
-
-    while(curNode){
-      if (integer - counter === 1) {
-        curNode.next = null
-      }
-      counter++
-      curNode = curNode.next
+    if (!this.head) {
+      return
     }
+    if (integer === 0) {
+      this.head = this.head.next
+      return
+    }
+
+    let previous = this.getAt(integer - 1)
+    if (!previous || !previous.next) return
+    previous.next = previous.next.next
   }
 
 
