@@ -70,9 +70,9 @@ class LinkedList {
     prevNode.next = null
   }
 
-  insertLast(Data){
-    newNode = new Node(Data)
-    curNode = this.head
+  insertLast(data){
+    let newNode = new Node(data)
+    let curNode = this.head
     while (curNode) {
       if (curNode.next === null){
         curNode.next = newNode
@@ -81,6 +81,42 @@ class LinkedList {
       curNode = curNode.next
     }
   }
+
+  getAt(integer){
+    if (!this.head) return null
+
+    if (this.size() < integer) {
+      return null;
+    }
+    let count = 0
+    let curNode = this.head
+
+    while (curNode) {
+      curNode = curNode.next
+      if (integer === count) {
+        return curNode
+      }
+      count += 1
+    }
+    return null
+  }
+
+  removeAt(integer){
+    if (this.head === null) return null
+    let counter = 0
+    let curNode = this.head
+    let nextNode = curNode.next
+
+    while(curNode){
+      if (integer - counter === 1) {
+        curNode.next = null
+      }
+      counter++
+      curNode = curNode.next
+    }
+  }
+
+
 
 }
 
