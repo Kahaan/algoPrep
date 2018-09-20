@@ -100,7 +100,7 @@ class LinkedList {
     }
     return null
   }
-  // 
+  //
   // removeAt(integer){
   //   if (!this.head) {
   //     return
@@ -115,6 +115,15 @@ class LinkedList {
   //   previous.next = previous.next.next
   // }
 
+  forEach(fn){
+    if (!this.head) return null
+    let curNode = this.head
+    let node = curNode.next
+    while(node){
+      curNode = fn(curNode)
+      node = node.next
+    }
+  }
 
 
 }
