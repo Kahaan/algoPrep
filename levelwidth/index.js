@@ -24,7 +24,7 @@ function levelWidth(root) {
       counter[counter.length -1]++
     }
   }
-  // return counter
+  return counter
 }
 
 module.exports = levelWidth;
