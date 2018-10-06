@@ -8,21 +8,21 @@
 // Example:
 //   fib(4) === 3
 
-function memoize(fn){
-
-}
-
-function slowfib(n, arr) {
-  if (n < 2){
-    return n
-  }
-
-  return fib(n - 1) + fib(n - 2)
-}
-
-const fib = memoize(slowfib)
-
-module.exports = fib;
+// function memoize(fn){
+//
+// }
+//
+// function slowfib(n, arr) {
+//   if (n < 2){
+//     return n
+//   }
+//
+//   return fib(n - 1) + fib(n - 2)
+// }
+//
+// const fib = memoize(slowfib)
+//
+// module.exports = fib;
 //
 // arr = [0,1]
 // while (arr.length <= n){
